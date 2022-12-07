@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuestionBoard {	
+public class QuestionBoard {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
