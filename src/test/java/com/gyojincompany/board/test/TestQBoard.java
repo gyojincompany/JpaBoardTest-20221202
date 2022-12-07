@@ -12,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
+import com.gyojincompany.board.entity.AnswerBoard;
 import com.gyojincompany.board.entity.QuestionBoard;
+import com.gyojincompany.board.repository.ABoardRepository;
 import com.gyojincompany.board.repository.QBoardRepository;
 
 @SpringBootTest
@@ -21,6 +23,9 @@ public class TestQBoard {
 	
 	@Autowired
 	QBoardRepository qBoardRepository;
+	
+	@Autowired
+	private ABoardRepository aBoardRepository;
 	
 	@Test
 	@DisplayName("저장 테스트")
@@ -125,5 +130,23 @@ public class TestQBoard {
 		assertEquals(qAllSize2, qAllSize1-1);
 
 	}
+	
+//	@Test
+//	@DisplayName("답변 저장 테스트")
+//	public void AnswerCreatTest() {
+//		
+//		Optional<QuestionBoard> oQboard = qBoardRepository.findById(7);
+//		assertTrue(oQboard.isPresent());//7번 질문글이 존재하는지 테스트
+//		
+//		QuestionBoard qBoard = oQboard.get();
+//		
+//		AnswerBoard aBoard = new AnswerBoard();
+//		
+//		aBoard.setContent("7번글 답변입니다.");
+//		aBoard.setQuestionBoard(qBoard);
+//		
+//		aBoardRepository.save(aBoard);
+//		
+//	}
 	
 }
